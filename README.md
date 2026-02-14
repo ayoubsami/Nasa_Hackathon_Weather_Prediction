@@ -1,16 +1,18 @@
 
 
+# Nasa Hackathon Weather Prediction
 
 
 
+## Table of contents
 
-
-
+* [Getting Data](#Getting-Data)
+* [Merging and Cleaning Data](#Merging-and-Cleaning-Data)
 
 
 
 ----
-### GETTING THE DATA:
+### Getting Data:
 
 In this project we couldn't use any data we want, we had to use data from a specific list of platforms (if this wasn't the case, we could use more specific data of a small area (city metropolis) 
 and it would give us more specific prediction). the NASA owned Eartdata platform was the best option we had,so we used it.
@@ -34,5 +36,4 @@ one day in one file ) one is M2T1NXSLV and the other is M2T1NXFLX.
   +  We extract the whole info into a csv file.
 
 ------
-
-
+### Merging and Cleaning Data
