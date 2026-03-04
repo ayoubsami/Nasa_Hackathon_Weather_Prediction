@@ -9,10 +9,10 @@ The website is live on [nasaweither.me](https://nasaweither.me/)
 ## Table of contents
 
 * [1. Getting Data](#1-getting-data)
-* [2. Merging Data](#2.-Merging-and-Cleaning-Data:)
-* [3. ML Feature Creating](#3.ML-Feature-Creating:)
-* [4. Training the model](#4.-Training-the-model:)
-* [5. Results and Analyse](#5.-Results-and-Analyse:)
+* [2. Merging Data](#2-Merging-and-Cleaning-Data)
+* [3. ML Feature Creating](#3-ML-Feature-Creating)
+* [4. Training the model](#4-Training-the-model)
+* [5. Results and Analyse](#5-Results-and-Analyse)
 
 
 
