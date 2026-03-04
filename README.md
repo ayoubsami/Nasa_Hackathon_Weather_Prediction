@@ -8,9 +8,9 @@ The website is live on [nasaweither.me](https://nasaweither.me/)
 
 ## Table of contents
 
-* [Getting Data](#Getting-Data)
-* [Merging Data](#Merging-and-Cleaning-Data)
-* [ML Feature Creating](#ML-Feature-Creating)
+* [1. Getting Data](#1._Getting-Data)
+* [2. Merging Data](#2._Merging-and-Cleaning-Data)
+* [3. ML Feature Creating](#3._ML-Feature-Creating)
 
 
 ----
@@ -54,7 +54,11 @@ This is the most important part of the project, feature engineering is where you
  + is_day, is_night: this one is important, because it helps the model distinguish between the day and the night.
  + hour_sin, hour_cos: it helps the model learn that 00 is next to 23, without this, the model would differ between 23 and 00.
  + dist_center: it uses the haversine fomula, and it calculate the distance between the center of the map and a certain point.
- + radius, angle: it 
+ + radius, angle: it calculates the raduis and the angle between the latitudea and longitude.
+ + lat_bin, lon_bin: this turns latitude and longitude into integrals and inflate them, this helps the model to eliminate locality and draw patterns instead of just memorizing.
+ + geo_cluster: it uses kmeans to assign a cluster from 0 to 19 for each geographic position (kmeans model is saved so to be used in prediction).
+ + cluster_hour: it combines the geographic cluster with the hour.
+ + dist_hour_interaction: it calculates the product between dist_center and the hour_sin, it helps the model find a relashenship between them.
 
 
 
