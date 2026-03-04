@@ -11,9 +11,16 @@ The website is live on [nasaweither.me](https://nasaweither.me/)
 * [1. Getting Data](#1._Getting-Data)
 * [2. Merging Data](#2._Merging-and-Cleaning-Data)
 * [3. ML Feature Creating](#3._ML-Feature-Creating)
+* [4. Training the model](#4._Training_the_model)
+* [Results and Analyse](#Results_and_Analyse)
 
 
-----
+
+
+------
+------
+
+
 ### 1. Getting Data:
 
 In this project we couldn't use any data we want, we had to use data from a specific list of platforms (if this wasn't the case, we could use more specific data of a small area (city metropolis) 
@@ -38,7 +45,7 @@ one day in one file ) one is M2T1NXSLV and the other is M2T1NXFLX.
   +  We extract the whole info into a csv file.
 
 ------
-### 2. Merging Data
+### 2. Merging Data:
 
 At this point we have 125 csv fils, each has infos of one day. <br>
 This stage is where we combine 5 files (5 days) into one file (1 year).
@@ -46,11 +53,12 @@ This stage is where we combine 5 files (5 days) into one file (1 year).
 ------
 
 
-### 3. ML Feature Creating
+### 3. ML Feature Creating:
 
 
 This is the most important part of the project, feature engineering is where you transforme data into usefull data. bollow the ones we created:
 
+ + lon, lat, day: normal features that we started with (we didn't use hour feature, but the valuable informaion is extracted in hour_sin and hour_cos features)
  + is_day, is_night: this one is important, because it helps the model distinguish between the day and the night.
  + hour_sin, hour_cos: it helps the model learn that 00 is next to 23, without this, the model would differ between 23 and 00.
  + dist_center: it uses the haversine fomula, and it calculate the distance between the center of the map and a certain point.
@@ -61,8 +69,16 @@ This is the most important part of the project, feature engineering is where you
  + dist_hour_interaction: it calculates the product between dist_center and the hour_sin, it helps the model find a relashenship between them.
 
 
+--------
 
 
+### 4. Training the model:
 
 
+We started by using Random Forest, it's good with lag and mean features, but in this project we cann't use these features (because of far future prediction), and Random Forest doesn't really understand or draw relasheship features (like cluster_hour). But we did train it using Random Forest and lag and mean features, but the score wasn't that good and model file was like 8gb (compared to 100mb with LightGBM).
+<br> We ended up settling for a gradient boosting model where each new tree tries to correct the last one, (for our tabular data, they say sometimes gradient boosting outperforms neural networks). 
+<br> LightGBM was our best choice, Developed by Microsoft in 2016 (so it's quiet new), it fast and very memory efficient, 
+
+
+### 5. Results and Analyse:
 
