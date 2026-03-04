@@ -30,6 +30,7 @@ for i in range(0, len(csv_files), 5):
 
     data = pd.read_csv(output_file)
     os.remove(output_file)
+    data["PRECTOT"] = data["PRECTOT"] * 3600 * 24 * 86400
     data = data[["lon", "lat", "time","T2M_C","wind_speed","PRECTOT"]]
     data.to_csv(f"output/merged_data_{year}.csv", index=False, float_format="%.2f")
 
