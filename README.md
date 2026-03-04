@@ -2,17 +2,19 @@
 
 # Nasa Hackathon Weather Prediction
 
-The website is live on NasaWeither.me
+The Model predict the tempature, the wind speed and the precipitation, in a certain hour of the day (the prototype only trained on the first 5 days of october), in a certain point in the whole area of Morocco. All based on 4 inputs: latitude, longitude, day and hour.
+
+The website is live on [nasaweither.me](https://nasaweither.me/)
 
 ## Table of contents
 
 * [Getting Data](#Getting-Data)
-* [Merging and Cleaning Data](#Merging-and-Cleaning-Data)
-
+* [Merging Data](#Merging-and-Cleaning-Data)
+* [ML Feature Creating](#ML-Feature-Creating)
 
 
 ----
-### Getting Data:
+### 1. Getting Data:
 
 In this project we couldn't use any data we want, we had to use data from a specific list of platforms (if this wasn't the case, we could use more specific data of a small area (city metropolis) 
 and it would give us more specific prediction). the NASA owned Eartdata platform was the best option we had,so we used it.
@@ -36,4 +38,27 @@ one day in one file ) one is M2T1NXSLV and the other is M2T1NXFLX.
   +  We extract the whole info into a csv file.
 
 ------
-### Merging and Cleaning Data
+### 2. Merging Data
+
+At this point we have 125 csv fils, each has infos of one day. <br>
+This stage is where we combine 5 files (5 days) into one file (1 year).
+
+------
+
+
+### 3. ML Feature Creating
+
+
+This is the most important part of the project, feature engineering is where you transforme data into usefull data. bollow the ones we created:
+
+ + is_day, is_night: this one is important, because it helps the model distinguish between the day and the night.
+ + hour_sin, hour_cos: it helps the model learn that 00 is next to 23, without this, the model would differ between 23 and 00.
+ + dist_center: it uses the haversine fomula, and it calculate the distance between the center of the map and a certain point.
+ + radius, angle: it 
+
+
+
+
+
+
+
