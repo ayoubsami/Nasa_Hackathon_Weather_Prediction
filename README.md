@@ -85,9 +85,9 @@ We started by using Random Forest, it's good with lag and mean features, but in 
 
 ### 5. Results and Analyse:
 
-<a href="Bubble sort"><img src="./pics/pic1.png" align="left" width="250" height="200"></a>
-<a href="Bubble sort"><img src="./pics/pic2.png" align="middle" width="250" height="200"></a>
-<a href="Bubble sort"><img src="./pics/pic3.png" align="right" width="250" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic1.png" align="left" width="280" height="190"></a>
+<a href="Bubble sort"><img src="./pics/pic2.png" align="middle" width="280" height="190"></a>
+<a href="Bubble sort"><img src="./pics/pic3.png" align="right" width="280" height="190"></a>
 
 
 <br> In the above we can check the comparison between the predicted and true values for each target.<be> We can notice that the tempature model is quiet perfect.<br> But the wind model wasn't that good, and that is due to the spontaneity and locality of the wind parameter, the true values are going from 0 to 20, but the predicted go only from 2 to 10, so the model tries to calculate the mean.<br> The third picture gives use the precipitation parameter.
