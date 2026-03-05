@@ -78,7 +78,51 @@ This is the most important part of the project, feature engineering is where you
 We started by using Random Forest, it's good with lag and mean features, but in this project we cann't use these features (because of far future prediction), and Random Forest doesn't really understand or draw relasheship features (like cluster_hour). But we did train it using Random Forest and lag and mean features, but the score wasn't that good and model file was like 8gb (compared to 100mb with LightGBM).
 <br> We ended up settling for a gradient boosting model where each new tree tries to correct the last one, (for our tabular data, they say sometimes gradient boosting outperforms neural networks). 
 <br> LightGBM was our best choice, Developed by Microsoft in 2016 (so it's quiet new), it fast and very memory efficient, 
+<br> I used LightGBM in a multi output regression setup with 3 estimators, one for each target (tempature, wind and precipitation), and each is trained separately, so it's kind of 3 models at the same time. 
+
+--------
 
 
 ### 5. Results and Analyse:
+
+<a href="Bubble sort"><img src="./pics/pic1.png" align="left" width="300" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic2.png" align="middle" width="300" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic3.png" align="right" width="300" height="200"></a>
+
+
+<br> In the above we can check the comparison between the predicted and true values for each target.<be> We can notice that the tempature model is quiet perfect.<br> But the wind model wasn't that good, and that is due to the spontaneity and locality of the wind parameter, the true values are going from 0 to 20, but the predicted go only from 2 to 10, so the model tries to calculate the mean.<br> The third picture gives use the precipitation parameter.
+
+
+
+
+<a href="Bubble sort"><img src="./pics/pic5.png" align="left" width="300" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic6.png" align="middle" width="300" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic7.png" align="right" width="300" height="200"></a>
+
+
+
+<br> These pictures shows us the residual plot for each parameter, the first two look quiet normal, but the third one is very different, as it shows that most of the predicted values are not real, and deviated from the true values.
+
+
+
+<a href="Bubble sort"><img src="./pics/pic4.png" align="right" width="500" height="300"></a>
+
+<br> This one is the representation of the importance of each feature (for tempature target). Day feature is in the top, then distance hour interaction feature. these 2 are the basline of the model to predict, the shoking is the low level of importance of geo_cluster feature, but i think that this is due to it being used in the final trees, as it's a 20 class feature
+
+----------
+----------
+----------
+----------
+----------
+----------
+
+
+
+The scores bellow are the classic ones:
+
+|  | Tempature | Wind | Precipatation |
+|----------|----------|----------|----------|
+| R2 score  | 0.87227  | 0.16010  | 0.37132  |
+| MSE  | 4.53478  | 5.89238  | 13.70370  |
+| MAE  | 1.55270  | 1.93998  | 2.78202  |
 
