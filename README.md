@@ -95,9 +95,9 @@ We started by using Random Forest, it's good with lag and mean features, but in 
 
 
 
-<a href="Bubble sort"><img src="./pics/pic5.png" align="left" width="300" height="200"></a>
-<a href="Bubble sort"><img src="./pics/pic6.png" align="middle" width="300" height="200"></a>
-<a href="Bubble sort"><img src="./pics/pic7.png" align="right" width="300" height="200"></a>
+<a href="Bubble sort"><img src="./pics/pic5.png" align="left" width="265" height="190"></a>
+<a href="Bubble sort"><img src="./pics/pic6.png" align="middle" width="265" height="190"></a>
+<a href="Bubble sort"><img src="./pics/pic7.png" align="right" width="265" height="190"></a>
 
 
 
