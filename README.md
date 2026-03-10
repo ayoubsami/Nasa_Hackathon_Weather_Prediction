@@ -13,7 +13,7 @@ The website is live on [nasaweither.me](https://nasaweither.me/)
 * [3. ML Feature Creating](#3-ML-Feature-Creating)
 * [4. Training the model](#4-Training-the-model)
 * [5. Results and Analyse](#5-Results-and-Analyse)
-
+* [6. Conclusion](#6-Conclusion)
 
 
 
@@ -126,3 +126,15 @@ The scores bellow are the classic ones:
 | MSE  | 4.53478  | 5.89238  | 13.70370  |
 | MAE  | 1.55270  | 1.93998  | 2.78202  |
 
+
+
+
+
+
+
+### 6. Conclusion:
+
+
+
+We Conclude that the model works great on Tempature, but not on wind and precipitation. Even though weither is not really predicted/hard to based on previous years, this project is just
+a product concept, to really fine-tune it you need to introduce some parameters for clumate change, As it would be more efficiant and more performant to just use neuron networks.
