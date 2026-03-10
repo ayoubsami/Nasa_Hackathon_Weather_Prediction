@@ -141,4 +141,4 @@ The scores bellow are the classic ones:
 
 
 We Conclude that the model works great on Tempature, but not on wind and precipitation. Even though weither is not really predicted/hard to based on previous years, this project is just
-a product concept, to really fine-tune it you need to introduce some parameters for clumate change, As it would be more efficiant and more performant to just use neuron networks.
+a product concept, to really fine-tune it you need to introduce some parameters for clumate change, As it would also be more efficiant and more performant to just use neuron networks.
